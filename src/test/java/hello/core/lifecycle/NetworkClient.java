@@ -1,5 +1,8 @@
 package hello.core.lifecycle;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
 public class NetworkClient {
 
     private String url;
@@ -26,12 +29,14 @@ public class NetworkClient {
         System.out.println("close + " + url);
     }
 
+    @PostConstruct // 자바 코드 -> 스프링에 의존적 x
     public void init() {
         System.out.println("afterPropertiesSet");
         connect();
         call("초기화 연결 메세지");
     }
 
+    @PreDestroy // 자바 코드 -> 스프링에 의존적 x
     public void close() {
         System.out.println("destroy");
         disconnect();
