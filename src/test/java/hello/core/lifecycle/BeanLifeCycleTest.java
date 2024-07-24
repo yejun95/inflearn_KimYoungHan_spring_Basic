@@ -18,7 +18,7 @@ public class BeanLifeCycleTest {
 
     @Configuration
     static class LifeCycleConfig {
-        @Bean
+        @Bean(initMethod = "init", destroyMethod = "close") // destroyMethod는 추론기능으로 인해 close, shutdown 같은 메서드를 자동 호출함 -> 현재 close 코드를 지워도 똑같이 돌아감
         public NetworkClient networkClient() {
             NetworkClient networkClient = new NetworkClient(); // url 값이 set 되지 않았음에도 생성자 호출이 됨 -> null 출력
             networkClient.setUrl("http://hello-spring.dev");
