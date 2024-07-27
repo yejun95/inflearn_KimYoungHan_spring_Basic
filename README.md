@@ -9,4 +9,17 @@
 
 - 스프링 컨테이너와 의존 관계 주입
 
-- Autowired
+- Configuration, Autowired
+
+- singleton
+
+- 컴포넌트 스캔
+
+- 빈 생명주기
+
+- 빈 스코프
+  - singleton
+  - prototype
+  - request
+
+- Provider
