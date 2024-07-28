@@ -23,3 +23,5 @@
   - request
 
 - Provider
+  - ObjectProvider
+  - Provider
